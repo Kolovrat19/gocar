@@ -15,4 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('products', 'ProductController@index')->name('products.index');
+//Route::get('products', 'ProductController@index')->name('products.index');
+
+Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
